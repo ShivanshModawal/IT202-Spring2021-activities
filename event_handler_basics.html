@@ -30,15 +30,21 @@
 
     <script>
 
-    images.onmouseover = () => {
-         document.body.classList.add('bigger');
-    }
-    images.onmouseout = () => {
-         document.body.classList.remove('bigger');
-    }
-    blockquote.onclick = () =>{
-        window.open('https://quoteinvestigator.com/2014/05/27/rising/');
-    }
+
+    let a = document.getElementById("images")
+    a.addEventListener("mouseover",function(){
+        document.body.classList.add('bigger')
+    })
+
+    let b = document.getElementById("images")
+    b.addEventListener("mouseout",function(){
+        document.body.classList.remove('bigger')
+    })
+    
+    let x = document.querySelector("blockquote")
+    x.addEventListener("click",function(){
+        window.open("https://quoteinvestigator.com/2014/05/27/rising/");
+    })
           
     </script>
   
