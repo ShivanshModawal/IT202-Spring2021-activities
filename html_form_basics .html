@@ -1,0 +1,45 @@
+<!-- shivansh modawal -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+  </head>
+  <body>
+    <h1>Form Basics</h1>
+
+    <form action="#" id="form1">
+      <input type="text" id="text1" name="text1"/>
+      <input type="radio" id="Redrad" name="radio1" value="Red">
+      <label for="redrad">Red</label><br>
+      <input type="radio" id="Greenrad" name="radio1" value="Green">
+      <label for="Greenrad">Green</label><br>
+      <input type="radio" id="bluerad" name="radio1" value="blue">
+      <label for="bluerad">blue</label><br>
+      <label for="select1">Day:-</label><br>
+      <select id="select1" name="select1">
+        <option value=""></option>
+        <option value="Mon">Mon</option>
+        <option value="Wed">Wed</option>
+        <option value="Fri">Fri</option></select><br>
+      <textarea id="textarea1" name="textarea1" placeholder="Please provide any additional feedback"></textarea></form>
+
+    <p id="uptonSinclairQuote">
+It is difficult to get a man to understand something, when his salary depends upon his not understanding it! -- Upton Sinclair
+    </p>
+    
+
+    <script>
+    document.querySelector("#text1").value = "Shivansh Modawal"
+    document.querySelector("#form1>input[value=Green]").checked = true;
+
+    document.querySelector("#textarea1").value = document.querySelector("#uptonSinclairQuote").innerText
+
+    document.querySelector("#select1").addEventListener('change',(event)=>{ 
+      console.log(event.target.value)
+    });
+
+    </script>
+  </body>
+</html>
