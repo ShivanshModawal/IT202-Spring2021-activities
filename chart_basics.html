@@ -46,8 +46,8 @@
       {
          // Create the data table.
          var data = new google.visualization.DataTable();
-         data.addColumn('string','date');
-         data.addColumn('number','sum_total_doses_cumulative');
+         data.addColumn('string','Date');
+         data.addColumn('number','Total Doses');
 
         fetch
         ("https://data.cityofchicago.org/resource/553k-3xzc.json?$SELECT=date,sum(total_doses_cumulative)&$GROUP=date&$ORDER=date")
