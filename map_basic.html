@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+      #map{height: 100%;}
+        html,
+        body{
+          height: 100%;
+          margin: 0;
+          padding: 0; 
+            }
+
+    </style>
+
+    <script>
+      let map;
+  
+      function initMap(){
+        map = new google.maps.Map(document.querySelector("#map"),{
+          center: {lat:41.8696 , lng:-87.6496},
+          zoom: 15,
+        })
+      }
+    </script> 
+
+    
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfw8HO5aF9utXdd_q7Bh8z3igugXxz2Vw&callback=initMap">
+</script>
+<div id="map"></div>
+  </body>
+</html>
