@@ -22,6 +22,9 @@
 
     <script>
 
+      let c1;
+      let c2;
+
       let map;
       function initMap(){
         map = new google.maps.Map(document.querySelector("#map"),{
@@ -54,6 +57,12 @@
           center: {lat:parseFloat(position.coords.latitude), lng:parseFloat(position.coords.longitude)},
           radius: 2,
         });
+        c1 = parseFloat(position.coords.latitude);
+        c2 = parseFloat(position.coords.longitude);
+        // document.getElementById('co-ordinates').innerHTML  = "{"+"lat"+":"+c1 + "," +"lat"+":" + c2 +"}";
+
+        let co = document.querySelector('#co-ordinates');
+        co.prepend("{"+"lat"+":"+c1 + "," +"lat"+":" + c2 +"}");
       }
 
       function error() {
@@ -67,11 +76,11 @@
       };
 
       const watchID = navigator.geolocation.watchPosition(success, error, options);
-
-
-
       
     </script> 
+
+    <div id="co-ordinates"> </div>
+   
 
     
 <script async
