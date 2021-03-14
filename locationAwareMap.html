@@ -25,6 +25,8 @@
       let c1;
       let c2;
 
+      var d = new Date();
+
       let map;
       function initMap(){
         map = new google.maps.Map(document.querySelector("#map"),{
@@ -62,7 +64,7 @@
         // document.getElementById('co-ordinates').innerHTML  = "{"+"lat"+":"+c1 + "," +"lat"+":" + c2 +"}";
 
         let co = document.querySelector('#co-ordinates');
-        co.prepend("{"+"lat"+":"+c1 + "," +"lat"+":" + c2 +"}");
+        co.prepend("{"+"lat"+":"+c1 + "," +"lat"+":" + c2 +"}" + d);
       }
 
       function error() {
