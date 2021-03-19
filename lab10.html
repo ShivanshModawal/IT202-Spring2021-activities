@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset='utf-8'/>
+  <meta name="viewport" content="width=device-width">
+    <title>Lab 10</title>
+</head>
+
+<body>
+    <div>
+  <textarea name="Text" placeholder= "Enter Text Here:" id="text" rows="4" cols="50"></textarea></div>
+     
+    <div>
+  <label for="select">VOICE:</label>
+  <select name="select" id="select">
+      <option value="empty"></option>
+  </select></div>
+
+  <button type="button" id="speak" disabled>SPEAK>></button>
+
+  <script>
+    let text = document.querySelector('#text');
+    let voice = document.querySelector('#select');
+    let button = document.querySelector("#speak");
+    let v;
+
+    window.speechSynthesis.onvoiceschanged = function() {
+          v = window.speechSynthesis.getVoices();
+
+          for(let i = 0; i < v.length; i++) {
+           let option = document.createElement('option');
+           option.textContent = v[i].name + ' (' + v[i].lang + ')';
+           option.value = i;
+           option.setAttribute('data', v[i].name);
+         voice.appendChild(option);
+          };
+      };
+
+       select.onchange = (event) => {
+        
+         if (event.target.value !== "")
+             button.disabled = false
+            }
+
+        button.addEventListener("click", () => {
+
+        let speak = new SpeechSynthesisUtterance(text.value);
+        let choosen = voice.selectedOptions[0].getAttribute('data');
+
+        for(i = 0; i < v.length ; i++) {
+       if(v[i].name === choosen) {
+          speak.voice = v[i];
+          speak.lang = v[i].lang;
+          speak.volume = 100;
+        }
+      } 
+      window.speechSynthesis.speak(speak);
+      text.blur();
+    });
+  </script>
+</body>
+
+</html>
